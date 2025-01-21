@@ -4,7 +4,7 @@ using namespace std;
 
 int main (){
     string nombreArchivo;
-    cout << "¿Cuál es el nombre de su archivo?: ";
+    cout << "¿Cuál es el nombre y extensión de su archivo ?: ";
     cin >> nombreArchivo;
 
     ifstream nuevoArchivo(nombreArchivo);

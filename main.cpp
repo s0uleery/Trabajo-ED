@@ -11,5 +11,5 @@ int main (){
     if (!nuevoArchivo) {
         cerr << "¡ERROR! No se ha podido abrir el archivo" << endl;
         return 1;
-
+    }
 }

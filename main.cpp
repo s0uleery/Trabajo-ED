@@ -28,9 +28,6 @@ int main (){
          if (j < cantidadNodos - 1) {
                 nuevoArchivo >> coma; 
             }
-            if (matrizAdy[i][j] == 0 && i != j) {
-                matrizAdy[i][j] = 99999; 
-            }
         }
     }
     nuevoArchivo.close();

@@ -24,9 +24,12 @@ int main (){
     for (int i = 0; i < cantidadNodos; ++i) {
         for (int j = 0; j < cantidadNodos; ++j) {
             nuevoArchivo >> matrizAdy[i][j];
-
-         if (j < cantidadNodos - 1) {
-                nuevoArchivo >> coma; 
+            
+           if (j < cantidadNodos - 1) {
+                nuevoArchivo >> coma;
+            }
+            if (matrizAdy[i][j] == 0 && i != j) {
+                matrizAdy[i][j] = -1; 
             }
         }
     }

@@ -24,7 +24,7 @@ int main (){
     for (int i = 0; i < cantidadNodos; ++i) {
         for (int j = 0; j < cantidadNodos; ++j) {
             nuevoArchivo >> matrizAdy[i][j];
-            
+
            if (j < cantidadNodos - 1) {
                 nuevoArchivo >> coma;
             }
@@ -35,13 +35,13 @@ int main (){
     }
     nuevoArchivo.close();
 
-    cout << "Matriz del grafo:" << endl;
+    /**cout << "Matriz del grafo:" << endl;
     for (int i = 0; i < cantidadNodos; ++i) {
         for (int j = 0; j < cantidadNodos; ++j) {
             cout << matrizAdy[i][j] << " ";
         }
         cout << endl;
     }
-
+    **/
 
 }

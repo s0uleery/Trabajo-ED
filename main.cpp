@@ -114,10 +114,32 @@ int main (){
     for (int i = 0; i < cantidadNodos; i++){
         for (int j = 0; j < cantidadNodos; j++){
             if (matrizAdy[i][j] != -1){
-                grafo[i] -> ady.push_back(make_pair(grafo[j], matrizAdy[i][j]));
+                pair<Nodo*, int> adyacente;
+                adyacente.first = grafo[j];
+                adyacente.second = matrizAdy[i][j];
+                grafo[i]->ady.push_back(adyacente);
             }
         }
     }
+
+    Nodo* inicial = grafo[0];
+    vector<int> distancias;
+    vector<char> padres;
+    dijkstra(grafo, inicial, distancias, padres);
+
+    char destino;
+    cout << "Ingrese el nodo de destino: ";
+    cin >> destino;
+
+    if (destino < 'A' || destino >= 'A' + cantidadNodos){
+        cerr << "El nodo de destino es inválido." << endl;
+        return 1;
+    }
+
+    if (distancias[destino - 'A'] == -1){
+        cout << "No existe camino desde " << inicial -> letra << " al nodo " << destino << endl;
+    }
+    
 
 
 

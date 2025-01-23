@@ -12,7 +12,11 @@ public:
     }
     };
 
-    
+void dijkstra(vector<Nodo*>& grafo, Nodo* inicial, vector<int>& distancias, vector<char>& padres){
+    int n = grafo.size();
+    distancias.assign(n, -1);
+    padres.assign(n, 0);
+}
 
 
 int main (){

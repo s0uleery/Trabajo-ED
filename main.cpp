@@ -65,7 +65,12 @@ void imprimirArbol(char destino, vector<char>& padres){
         camino.push_back(actual);
         actual = padres[actual - 'A'];
     }
-    
+
+    for (vector<char> :: reverse_iterator it = camino.rbegin(); it != camino.rend(); it++){
+        if (it != camino.rbegin()) cout << " -> ";
+        cout << *it;
+    }
+    cout << endl;
 }
 
 int main (){

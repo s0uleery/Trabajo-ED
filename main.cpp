@@ -138,10 +138,16 @@ int main (){
 
     if (distancias[destino - 'A'] == -1){
         cout << "No existe camino desde " << inicial -> letra << " al nodo " << destino << endl;
+    } else {
+        cout << "El peso del camino más corto desde el nodo " << inicial -> letra << " al nodo " << destino << " es: " << distancias[destino - 'A'] << endl;
+        cout << "Camino: ";
+        imprimirCaminoCorto(destino, padres);
+        cout << endl;
+        imprimirArbol(destino, padres);
     }
-    
 
-
-
-
+   for (vector<Nodo*>::iterator it = grafo.begin(); it != grafo.end(); it++) {
+        delete *it;
+   }
+    return 0;
 }

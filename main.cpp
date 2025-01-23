@@ -21,7 +21,7 @@ int main (){
 
     for (int i = 0; i <cantidadNodos; i++){
         char letra = 'A' + i;
-        grafo.push_back(new Nodo(etiqueta));
+        grafo.push_back(new Nodo(letra));
     }
 
     int matrizAdy[cantidadNodos][cantidadNodos];
@@ -41,13 +41,15 @@ int main (){
     }
     nuevoArchivo.close();
 
-    /**cout << "Matriz del grafo:" << endl;
-    for (int i = 0; i < cantidadNodos; i++) {
-        for (int j = 0; j < cantidadNodos; j++) {
-            cout << matrizAdy[i][j] << " ";
+    for (int i = 0; i < cantidadNodos; i++){
+        for (int j = 0; j < cantidadNodos; j++){
+            if (matrizAdy[i][j] != -1){
+                grafo[i] -> ady.push_back(make_pair(grafo[j], matrizAdy[i][j]));
+            }
         }
-        cout << endl;
     }
-    **/
+
+
+
 
 }

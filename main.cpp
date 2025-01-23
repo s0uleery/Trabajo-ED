@@ -29,8 +29,25 @@ void dijkstra(vector<Nodo*>& grafo, Nodo* inicial, vector<int>& distancias, vect
                 actual = j;
             }
         }
+        if (actual == -1) break;
+
+        Nodo* nodoActual = grafo[actual];
+        visitado[actual] = true;
+
+        for (vector<pair<Nodo*, int>>:: iterator it = nodoActual -> ady.begin(); it != nodoActual -> ady.end(); it++ ){
+            Nodo* adyacente = it -> first;
+            int peso = it -> second;
+            int distancia = distancias[actual] + peso;
+
+            if (distancias[actual] != -1 && (distancias[adyacente -> letra - 'A'] == -1 || distancia < distancias [adyacente -> letra - 'A'])){
+                distancias[adyacente -> letra - 'A'] = distancia;
+                padres[adyacente -> letra - 'A'] = nodoActual -> letra;
+            }
+        }
     }
 }
+
+
 
 
 int main (){

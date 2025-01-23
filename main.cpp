@@ -16,6 +16,20 @@ void dijkstra(vector<Nodo*>& grafo, Nodo* inicial, vector<int>& distancias, vect
     int n = grafo.size();
     distancias.assign(n, -1);
     padres.assign(n, 0);
+
+    vector<bool> visitado(n,false);
+    distancias[inicial -> letra - 'A'] = 0;
+
+    for (int i = 0; i < n; i++){
+        int actual = -1;
+        int masCorto = -1;
+        for (int j = 0; j < n; j++){
+            if (!visitado[j] && distancias[j] != -1 && (masCorto == -1 || distancias[j] < masCorto)){
+                masCorto = distancias[j];
+                actual = j;
+            }
+        }
+    }
 }
 
 

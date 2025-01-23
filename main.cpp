@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 using namespace std;
 
 int main (){
@@ -13,16 +14,21 @@ int main (){
         return 1;
     }
 
+    vector<Nodo*> grafo;
     int cantidadNodos;
     nuevoArchivo >> cantidadNodos;
     nuevoArchivo.ignore();
 
-    int matrizAdy[cantidadNodos][cantidadNodos];
+    for (int i = 0; i <cantidadNodos; i++){
+        char letra = 'A' + i;
+        grafo.push_back(new Nodo(etiqueta));
+    }
 
+    int matrizAdy[cantidadNodos][cantidadNodos];
     char coma;
 
-    for (int i = 0; i < cantidadNodos; ++i) {
-        for (int j = 0; j < cantidadNodos; ++j) {
+    for (int i = 0; i < cantidadNodos; i++) {
+        for (int j = 0; j < cantidadNodos; j++) {
             nuevoArchivo >> matrizAdy[i][j];
 
            if (j < cantidadNodos - 1) {
@@ -36,8 +42,8 @@ int main (){
     nuevoArchivo.close();
 
     /**cout << "Matriz del grafo:" << endl;
-    for (int i = 0; i < cantidadNodos; ++i) {
-        for (int j = 0; j < cantidadNodos; ++j) {
+    for (int i = 0; i < cantidadNodos; i++) {
+        for (int j = 0; j < cantidadNodos; j++) {
             cout << matrizAdy[i][j] << " ";
         }
         cout << endl;

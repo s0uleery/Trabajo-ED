@@ -117,7 +117,13 @@ int main (){
     vector<int> distancias;
     vector<char> padres;
     dijkstra(grafo, inicial, distancias, padres);
-
+    
+    cout << "Nodos disponibles: ";
+    for (int i = 0; i < cantidadNodos; i++) {
+        cout << grafo[i]-> letra << " ";
+    }
+    
+    cout << endl;
     char destino;
     cout << "Ingrese el nodo de destino: ";
     cin >> destino;

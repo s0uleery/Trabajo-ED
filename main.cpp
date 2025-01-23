@@ -47,15 +47,6 @@ void dijkstra(vector<Nodo*>& grafo, Nodo* inicial, vector<int>& distancias, vect
     }
 }
 
-void imprimirCaminoCorto(char destino, vector <char>& padres){
-    if (padres[destino - 'A'] == 0){
-        cout << destino;
-        return;
-    }
-    imprimirCaminoCorto(padres[destino - 'A'], padres);
-    cout << " -> " << destino;
-}
-
 void imprimirArbol(char destino, vector<char>& padres){
     cout << "Arbol del camino más corto: " << endl;
     char actual = destino;
@@ -140,9 +131,6 @@ int main (){
         cout << "No existe camino desde " << inicial -> letra << " al nodo " << destino << endl;
     } else {
         cout << "El peso del camino más corto desde el nodo " << inicial -> letra << " al nodo " << destino << " es: " << distancias[destino - 'A'] << endl;
-        cout << "Camino: ";
-        imprimirCaminoCorto(destino, padres);
-        cout << endl;
         imprimirArbol(destino, padres);
     }
 

@@ -3,6 +3,18 @@
 #include <vector>
 using namespace std;
 
+class Nodo{
+public:
+    char letra;
+    vector<pair<Nodo*, int>> ady;
+
+    Nodo(char letra) : letra(letra) {
+    }
+    };
+
+    
+
+
 int main (){
     string nombreArchivo;
     cout << "¿Cuál es el nombre y extensión de su archivo?: ";
